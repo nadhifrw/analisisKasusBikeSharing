@@ -84,8 +84,8 @@ min_date = day_df['dteday'].min().date()
 max_date = day_df['dteday'].max().date()
 start_date = st.sidebar.date_input("Start Date", min_date)
 end_date = st.sidebar.date_input("End Date", max_date)
-st.sidebar.markdown(f"<h4>Selected Date Range: {start_date} to {end_date} </h4>", unsafe_allow_html=True)
-
+st.sidebar.markdown("<h4>Pilih tanggal yang ada di atas untuk menentukan batas awal dan akhir yang ditampilkan</h4>", unsafe_allow_html=True)
+st.sidebar.markdown(f"<h4>Data yang ditunjukan {start_date} to {end_date} </h4>", unsafe_allow_html=True)
 # Menampilkan tab utama
 tab1, tab2, tab3, tab4, = st.tabs([
     "☁️ Weather Impact", 
