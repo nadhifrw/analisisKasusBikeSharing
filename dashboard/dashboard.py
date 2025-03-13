@@ -43,10 +43,10 @@ def load_data():
     holiday_map = {0: 'No Holiday', 1: 'Holiday'}
     workingday_map = {0: 'Non-working day', 1: 'Working day'}
     weather_map = {
-        1: 'Clear (Clear, Few clouds, Partly cloudy)',
-        2: 'Mist (Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist)',
-        3: 'Light Precipitation (Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds)',
-        4: 'Heavy Precipitation (Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog)'
+        1: 'Clear', # (Clear, Few clouds, Partly cloudy)
+        2: 'Cloudy/Mist', # (Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist)
+        3: 'Light Snow/Rain', # (Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds)
+        4: 'Heavy Snow/Rain' # (Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog)
     }
 
     # Mengaplikasukan mapping 
@@ -153,7 +153,7 @@ with tab1:
     # Mengatur label x-tick ke deskripsi cuaca
     plt.xticks(range(len(total_rentals_by_weather)), 
             [weather_labels.get(i, f"Weather {i}") for i in total_rentals_by_weather.index],
-            rotation=90)
+            rotation=0)
 
     # Menambah label dan judul
     plt.xlabel('Weather Condition')
@@ -188,7 +188,7 @@ with tab1:
     # Mengatur label x-tick ke deskripsi cuaca
     plt.xticks(range(len(avg_rentals_by_weather)), 
             [weather_labels.get(i, f"Weather {i}") for i in avg_rentals_by_weather.index],
-            rotation=90)
+            rotation=0)
 
     # Menambah label dan judul
     plt.xlabel('Weather Condition')
